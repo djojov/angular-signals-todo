@@ -5,7 +5,6 @@ import {
   ViewChild,
   inject,
 } from '@angular/core';
-import { toSignal } from '@angular/core/rxjs-interop';
 import { TodoService } from '../core/todos.service';
 import TodoItemComponent from '../shared/todo-item.component';
 
@@ -33,13 +32,7 @@ export class TodoEditorComponent {
 
   private todoService = inject(TodoService);
 
-  todos = toSignal(this.todoService.getTodos());
+  todos = this.todoService.getTodos().result;
 
-  addTodo() {
-    this.todoService
-      .addTodos(this.inputTodo.nativeElement.value)
-      .subscribe(() => {
-        console.log('Added todo');
-      });
-  }
+  addTodo() {}
 }

@@ -1,3 +1,9 @@
 {
-  "todos": []
+  "todos": [
+    {
+      "id": "5bff3b3c-c2ce-421b-9760-0cc7c18f879f",
+      "title": "test",
+      "completed": false
+    }
+  ]
 }
